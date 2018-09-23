@@ -1,0 +1,15 @@
+---
+title: Files
+---
+<h1>Files</h1>
+
+<ul>
+  {% for file in site.data.files %}
+
+    <li>
+      <p>{{ file.name }}</p>
+      <a href="{{ file.link }}">{{ file.link }}</a>
+    </li>
+
+  {% endfor %}
+</ul>
