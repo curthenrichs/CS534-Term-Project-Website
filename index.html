@@ -1,110 +1,208 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
+    <head>
     <meta charset="utf-8">
-    <title>CNN Sprite Generator - CS 534 Term Project - Home</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" />
-    <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>CNN Sprite Generator - CS 534 Term Project - Home</title>
-<meta name="generator" content="Jekyll v3.8.4" />
-<meta property="og:title" content="CNN Sprite Generator - CS 534 Term Project - Home" />
-<meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
-<script type="application/ld+json">
-{"@type":"WebSite","url":"http://localhost:4000/","headline":"CNN Sprite Generator - CS 534 Term Project - Home","@context":"http://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CNN Sprite Generator</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Generating new 2D game assests using DC-GAN.">
+    <link rel="canonical" href="https://uwmadison-cs534-term-project-f2018-cdh.github.io//">
 
-  </head>
-  <body>
-    
-<header>
-  <h1>CNN Sprite Generator : CS 534 - Fall 2018 - Term Project</h1>
-  <p>University of Wisconsin Madison</p>
-  <p>
-    Creators:
-    
-      Curt Henrichs,
-    
-      Sayem Wani,
-    
-      Saheen Feroz,
-    
-  <p>
-  <p>
-    Instructor: Mohit Gupta
-  </p>
-</header>
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="/style.css">
 
-    <nav>
-  
-    <a href="/"
-    class="current"
-    >
-      Home
-    </a>
-  
-    <a href="/team.html"
-    
-    >
-      Team
-    </a>
-  
-    <a href="/files.html"
-    
-    >
-      Files
-    </a>
-  
-    <a href="https://github.com/UWMadison-CS534-Term-Project-F2018-CDH"
-    
-    target="_blank">
-      Github
-    </a>
-  
-</nav>
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
-    <section>
-  <h2>Summary</h2>
-  <p>
-    Insert general overview/summary here
-  </p>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-  <h2>Motivation</h2>
-  <p>
-    Insert motivation for project here
-  </p>
+</head>
+    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+     <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i>  <span class="light">CS 534 Term Project</span> CNN Sprite Generator
+                </a>
+            </div>
 
-  <h2>Approach</h2>
-  <p>
-    Insert approach details here
-  </p>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#summary">Summary</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#download">Download</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#project">Project</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
-  <h2>Implementation</h2>
-  <p>
-    Insert implementation details here
-  </p>
+        <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">CNN Sprite Generator</h1>
+                        <p class="intro-text">Generating new 2D game assests using DC-GAN.<br>
+                        <a href="#summary" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-  <h2>Results</h2>
-  <p>
-    Insert results here
-  </p>
+        <!-- Summary Section -->
+    <section id="summary" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Summary</h2>
+                <p>
+                  Fill out with summary of GAN project
+                </p>
+        </div>
+    </section>
 
-  <h2>Discussion</h2>
-  <p>
-    Insert discussion here (what went right, what went wrong)
-  </p>
+        <!-- Download Section -->
+    <section id="download" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Download</h2>
+                    <p>Source code from GitHub</p>
+                    <a href="https://github.com/UWMadison-CS534-Term-Project-F2018-CDH" target="_blank" class="btn btn-default btn-lg">Visit GitHub</a>
 
-  <h2>References</h2>
-  <p>
-    Insert references to papers here
-  </p>
+                    <p><br>Course related documents provided</p>
+                    <p>
+                        <a href="/assets/files/proposal.pdf" target="_blank" class="btn btn-default btn-lg">Proposal</a>
+                        <a href="/assets/files/mid-term-report.pdf" target="_blank" class="btn btn-default btn-lg">Mid-term Report</a>
+                        <a href="/assets/files/presentation.pptx" target="_blank" class="btn btn-default btn-lg">Final Presentation</a>
+                    </p>
+
+                    <p><br>Dataset links (GitHub)</p>
+                    <p>
+                        <a href="" target="_blank" class="btn btn-default btn-lg">All Sprites</a>
+                        <a href="" target="_blank" class="btn btn-default btn-lg">Item Sprites</a>
+                        <a href="" target="_blank" class="btn btn-default btn-lg">Entity Sprites</a>
+                        <a href="" target="_blank" class="btn btn-default btn-lg">Environment Sprites</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Section -->
+<section id="project" class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <h2>Project</h2>
+        </div>
+        <div class="col-lg-8 col-lg-offset-0" style="display: inline-block; text-align: left;">
+            <h3>Motivation</h3>
+            <p>
+              Insert motivation for project here
+            </p>
+
+            <h3>Approach</h3>
+            <p>
+              Insert approach details here
+            </p>
+
+            <h3>Implementation</h3>
+            <p>
+              Insert implementation details here
+            </p>
+
+            <h3>Results</h3>
+            <p>
+              Insert results here
+            </p>
+
+            <h3>Discussion</h3>
+            <p>
+              Insert discussion here (what went right, what went wrong)
+            </p>
+
+            <h3>Acknowledgements</h3>
+            <p>Website Template: <a href="https://github.com/jeromelachaud/grayscale-theme" target="_blank">https://github.com/jeromelachaud/grayscale-theme</a></p>
+            <p>
+              Insert acknowledgements regarding the template, the course, etc.
+            </p>
+
+            <h3>References</h3>
+            <p>
+              Insert references to papers here
+            </p>
+
+        </div>
+    </div>
 </section>
 
-    <footer>
-  <p>Copyright &copy; 2018, CNN Sprite Generator - CS 534 Term Project</p>
-</footer>
+        <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Contact</h2>
+                <p>Our team is composed of students from CS 534 - Computational Photography fall 2018 course at the University of Wisonson Madison. </p>
+                <p>Curt Henrichs (Grad), Sayem Wani (Undergrad), Saheen Feroz (Undergrad)</p>
 
-  </body>
+                <ul class="list-inline banner-social-buttons">
+                    
+                    <li>
+                        <a href="https://github.com/UWMadison-CS534-Term-Project-F2018-CDH" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">github</span></a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </section>
+
+        <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; CNN Sprite Generator - CS 534 Term Project 2018</p>
+        </div>
+    </footer>
+
+     <!-- jQuery Version 1.11.0 -->
+    <script src="/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/jquery.easing.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/grayscale.js"></script>
+
+    </body>
 </html>

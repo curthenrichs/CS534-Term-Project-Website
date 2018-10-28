@@ -1,3 +1,5 @@
+Grayscale Jekyll theme
+=========================
 
 For active website navigate to https://uwmadison-cs534-term-project-f2018-cdh.github.io/
 
