@@ -90,7 +90,7 @@
                 from Horslev &amp; Perez-Liebana, we developed a deep convolutional generative
                 adversarial network (DCGAN) to generate 2D video game sprites. Our model was
                 augmented with a convolutional autoencoder that was pre-trained to render
-                sprites from a feature stack. Our GAN would then learn the feature stack to
+                sprites. Our GAN would then learn the latent feature stack of the autoencoder to
                 produce novel sprites. While we observed a decrease in training time to initial
                 reasonable results the approach traded in stability for that speed. Overall our
                 results show promise at creating novel sprites but needs further work to solve
@@ -148,7 +148,7 @@
             Current, general-use algorithms either iterate over the equivalent of building
             blocks to construct sprites that lack the detail of a hand-crafted image or
             explore a crafted algorithm using a pseudo-random seed [1]. Alternatively, a
-            developer can develop a deep neural network, such as a generative-adversarial
+            developer can construct a deep neural network, such as a generative-adversarial
             network, to produce novel sprites for their game [2]. However, a neural network
             is not a panacea; it requires a large dataset of images. Additionally, the
             developer must rely on the network converging to an optimal weight space while
@@ -164,7 +164,7 @@
             further refinement and animation would still need to be done to tailor these
             sprites for the specific game. As a future step the sprite pipeline may include
             animation generation [5]. Our motivation is partially drawn from personal experience
-            where the problem with making games comes down to doing the art and partially
+            where the problem with making games comes down to creating the art and partially
             inspired from literature [1]. </span></p>
 
             <p class=MsoNormal><span lang=EN>One valid critique of the GAN method is the
@@ -208,9 +208,9 @@
                dataset.</span></p>
 
             <p class=MsoListParagraphCxSpLast style='text-indent:-.25in'><span lang=EN>2.<span>&nbsp; </span></span><span
-            lang=EN>We will perform pretraining of the generator
-              model through autoencoders. Our network will use successive decoders from
-              result back trained through the normal unsupervised process. This should
+            lang=EN>We will perform pretraining of the GAN
+              model through autoencoders. Our network will use successive decoders
+              trained through the normal unsupervised process. This should
               populate the weight with a better chance of generalizing from input. A
               potential drawback will be lack of novelty in output images if the
               autoencoder overfits during training.</span></p>
@@ -219,9 +219,9 @@
             <p class=MsoNormal><span lang=EN>The following images detail the model
             architecture as sub-networks that correspond to the high-level image. The
             generator takes an input vector with 100 dimensions into a fully connected
-            layer that gets reshaped into feature stack shown. The next two layers are
+            layer that gets reshaped into the feature stack shown. The next two layers are
             transpose convolutional layers that learn to upsample the features to the form
-            that the decoder takes. Activation functions are ReLU.</span></p>
+            that the decoder takes in. Activation functions are ReLU.</span></p>
 
             <p class=MsoNormal align=center style='text-align:center'><span lang=EN
             style='font-size:18.0pt;line-height:115%'><img width=624 height=161
@@ -274,17 +274,15 @@
             <p class=MsoNormal><span lang=EN>For comparison, we will develop a standard
             DCGAN that closely follow Horsley's and Perez-Liebana's architecture (without
             our autoencoder). This network will still have hyperparameters
-            adjusted to produce best possible output given the limitation on time.</span></p>
+            adjusted to produce best possible output given the constraint of time.</span></p>
 
             <h3><a name="_yfrk64blmab2"></a><span lang=EN>Datasets</span></h3>
 
             <p class=MsoNormal><span lang=EN>Regarding the dataset, we will be collecting
-            sprites from open source resources, specifically OpenGameArt.org. This should
+            sprites from open source resources, specifically <a href="https://opengameart.org/">OpenGameArt.org</a>. This should
             provide enough data for an initial system. If necessary, we can perform simple
             manipulations such as changing the color palette and single-pixel
-            manipulations. Finally, if we need more data than what can be collected online
-            and with time permitting, we will employ neural style transfer on our current
-            sprite. Our team recognizes the largest risk to the success of the project is
+            manipulations. Our team recognizes the largest risk to the success of the project is
             collecting enough quality data for our network to generalize. Our models will
             be trained on constrained topics as subsets of items, entities, and
             environment. While this will reduce our training set it will also reduce the
@@ -301,7 +299,7 @@
             in a hierarchy. In the future, a classification neural network could be
             developed for sorting but that is outside the scope of our project. Finally, we
             package the sorted image data as serialized Numpy arrays along with labels
-            generated from the hierarchical structure due to sorting.</span></p>
+            generated from the hierarchical structure.</span></p>
 
             <h4><a name="_fcple86q6udd"></a><span lang=EN>Development and Training</span></h4>
 
@@ -323,7 +321,7 @@
 
             <p class=MsoNormal><span lang=EN>As a proof of concept while collecting our
             sprite dataset we developed a GAN to generate handwritten digits. This allowed
-            us to get familiar with Keras and develop the initial GAN architecture.' Figure
+            us to get familiar with Keras and develop the initial GAN architecture. Figure
             6 displays several digits generated from the trained network. These results
             were generated after training the network for 20 epochs using the full MNIST
             dataset.</span></p>
@@ -498,16 +496,17 @@
             <p class=MsoNormal style='text-align:justify'><span lang=EN>This, however, did
             not prove to be a great solution as the autoencoder GAN did not perform well
             for limited datasets. Also, even on large datasets, once the GAN experience
-            partial collapse the training process had to be restarted. Nevertheless, the
+            partial mode collapse the training process had to be restarted. Nevertheless, the
             autoencoder GAN did show promise through the novelty of the outputs and a
             relatively lower training time. </span></p>
 
 
 
             <p class=MsoNormal><span lang=EN>A final attempt to handle the discriminator
-            loss approaching zero was to use the comparison GAN's discriminator and our
+            loss approaching zero was to use the comparison GAN's discriminator and our autoencoder
             model's generator and decoder. This produced the following sprites which were an
-            minor improvement over our previous autoencoder models.</span></p>
+            minor improvement over our previous autoencoder models. Furthermore, it proved be stable
+            for a longer amount of time but it still eventually resulted in partial mode collapse.</span></p>
 
 
 
@@ -529,21 +528,20 @@
             adversarial network that was augmented with a pre-trained autoencoder. Thus,
             instead of learning to draw images, the GAN was responsible for learning the
             feature space of an autoencoder that was pre-trained to render sprites. This
-            resulted in a model that could learn novel pattern with the relatively small
+            resulted in a model that could learn novel patterns with the relatively small
             dataset we collected. Furthermore, we found that using an autoencoder decreased
             time to get initial results but at a major trade-off of stability during training.
             This was observed by the GAN's discriminator approaching zero early in the
-            training. Several possible solutions we have found include minibatch
-            discrimination, training multiple models for different modes,
-            unrolled GANs, and collecting a larger dataset of sprites.</span></p>
+            training process. Several possible solutions we have found (though not yet implemeted) include minibatch
+            discrimination, unrolled GANs, and collecting a larger dataset of sprites.</span></p>
 
             <p class=MsoNormal style='margin-bottom:16.0pt'><span lang=EN>A second
             challenge encountered during development was generating images with correct
             coloring and alpha channel. For example, the autoencoder trained on a small
             dataset can produce the correct shape but would apply a new color palette to
             the result image. Likewise, both the comparison GAN and the autoencoder GAN
-            would fail to learn color information while training on occasion. For the
-            autoencoder, this resulted in sprites with an inconsistent color palette and in the
+            would fail to learn color information while training. For the
+            autoencoder GAN, this resulted in sprites with an inconsistent color palette and in the
             comparison model, the sprites would have color noise. These pixel errors
             jeopardize the visual metaphor that the sprite is supposed to serve if used in
             a game. We believe the first step to addressing this problem is to build a
@@ -565,8 +563,8 @@
             setbacks due to stability and color challenge the benefit of the autoencoder,
             they do not necessarily invalidate the approach. We believe the potential
             benefit as a method to reduce learning time and increase novelty is still
-            suggested by the results, we were able to generate. Further work is needed to
-            triangulate these results. </span></p>
+            suggested by the results we were able to generate. Further work is needed to
+            triangulate our findings. </span></p>
 
             <h3><a name="_hfsmf67rmmxy"></a><span lang=EN>Acknowledgements</span></h3>
 
