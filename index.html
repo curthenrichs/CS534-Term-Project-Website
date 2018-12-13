@@ -151,7 +151,7 @@
             developer can develop a deep neural network, such as a generative-adversarial
             network, to produce novel sprites for their game [2]. However, a neural network
             is not a panacea; it requires a large dataset of images. Additionally, the
-            developer must rely on the network converging to a optimal weight space while
+            developer must rely on the network converging to an optimal weight space while
             simultaneously not overfitting.</span></p>
 
             <h3><a name="_ekyaqsbfigp3"></a><span lang=EN>Approach</span></h3>
@@ -159,11 +159,11 @@
             <p class=MsoNormal><span lang=EN>Our solution takes significant inspiration
             from Lewis Horsley's and Diego Perez-Liebana's 2017 paper titled <i>Building an
             Automatic Sprite Generator with Deep Convolutional Generative Adversarial
-            Networks </i>[2]. The rational to use a GAN over hand-crafting would be to
-            generate sprites without much human intervention after model training. Note
+            Networks </i>[2]. The rationale to use a GAN over hand-crafting would be to
+            generate sprites without much human intervention after model training. Note that
             further refinement and animation would still need to be done to tailor these
             sprites for the specific game. As a future step the sprite pipeline may include
-            animation generation [5]. Our motivation partially drawn from personal experience
+            animation generation [5]. Our motivation is partially drawn from personal experience
             where the problem with making games comes down to doing the art and partially
             inspired from literature [1]. </span></p>
 
@@ -179,7 +179,7 @@
             <h3><a name="_ncjdnnop30v8"></a><span lang=EN>Implementation</span></h3>
 
             <p class=MsoNormal><span lang=EN>Our solution will first train an autoencoder,
-            then flip the encoder, decoder using the hidden central feature structure as
+            then flip the encoder and decoder using the hidden central feature structure as
             both input and output, see Figure 1. After this we will hold the autoencoder's
             weights constant while training a generator and discriminator. Meaning the GAN
             only needs to learn what features to select and discriminate on instead of
@@ -216,7 +216,7 @@
               autoencoder overfits during training.</span></p>
             </div>
 
-            <p class=MsoNormal><span lang=EN>The following images detail the the model
+            <p class=MsoNormal><span lang=EN>The following images detail the model
             architecture as sub-networks that correspond to the high-level image. The
             generator takes an input vector with 100 dimensions into a fully connected
             layer that gets reshaped into feature stack shown. The next two layers are
@@ -271,9 +271,9 @@
 
             <h3><a name="_xjlqujpekft0"></a><span lang=EN>Comparison Architecture</span></h3>
 
-            <p class=MsoNormal><span lang=EN>For comparison we will develop a standard
-            DCGAN that closely follow Horsley's and Perez-Liebana's architecture. without
-            the autoencoder and labeling. This network will still have hyperparameters
+            <p class=MsoNormal><span lang=EN>For comparison, we will develop a standard
+            DCGAN that closely follow Horsley's and Perez-Liebana's architecture (without
+            our autoencoder). This network will still have hyperparameters
             adjusted to produce best possible output given the limitation on time.</span></p>
 
             <h3><a name="_yfrk64blmab2"></a><span lang=EN>Datasets</span></h3>
@@ -298,7 +298,7 @@
             be discarded). Sprites themselves may either originate from a sprite-sheet
             where they are extracted or may already be provided individually. The sprite is
             then normalized to a four-channel image (RGBA) before being manually classified
-            in a hierarchy. In the future a classification neural network could be
+            in a hierarchy. In the future, a classification neural network could be
             developed for sorting but that is outside the scope of our project. Finally, we
             package the sorted image data as serialized Numpy arrays along with labels
             generated from the hierarchical structure due to sorting.</span></p>
@@ -309,12 +309,12 @@
             autoencoder architecture and the comparison architecture. Keras was chosen due
             to the ease of use in leveraging Tensorflow and that it is a Python library.
             For each subset of images, the class of interest, we will train a new variant
-            of the network. Regarding training we chose Google Colab as it provides free
+            of the network. Regarding training, we chose Google Colab as it provides free
             GPU access for a Jupyter notebook.</span></p>
 
             <h3><a name="_aey3jvgiru5g"></a><span lang=EN>Results</span></h3>
 
-            <p class=MsoNormal><span lang=EN>In the following sections we will cover our
+            <p class=MsoNormal><span lang=EN>In the following sections, we will cover our
             development process starting with the GAN created to generate handwritten
             digits, the comparison GAN, and autoencoder GAN. Each section will detail the
             design decisions and inspiration behind it along with several result images.</span></p>
@@ -341,7 +341,7 @@
             generated terrain tiles, Figure 7. Our network was trained for approximately
             2000 epochs to achieve these results. Most interesting sprites are the various
             block patterns that emerge as a feature. Note that some of the artifacts are
-            exaggerated due to the sprites being scaled, however there is still much work
+            exaggerated due to the sprites being scaled, however, there is still much work
             to be done in generating valid sprites.</span></p>
 
             <p class=MsoNormal align=center style='text-align:center'><span lang=EN><img
@@ -356,7 +356,7 @@
             items, specifically our largest subset was various weapons like swords, staffs,
             maces, etc. Figure 8 shows what our network learned at approximately 500
             epochs. A thousand epochs later, the results are shown in Figure 9. In both
-            cases the network has difficulty learning the relevant details but has a
+            cases, the network has difficulty learning the relevant details but has a
             general understanding of shape and shadow.</span></p>
 
             <p class=MsoNormal align=center style='text-align:center'><span lang=EN><img
@@ -378,7 +378,7 @@
             some valid results. Figure 10, shows a sample of these generated images, note
             that the network did not generalize well, instead learning only the exemplars
             in the dataset. For example, the sword generated in the center is almost
-            identical to one training sprite. We attempt address this issue by increasing
+            identical to one training sprite. We attempt to address this issue by increasing
             our dataset and thus variance. </span></p>
 
 
@@ -393,9 +393,9 @@
             <h5><a name="_jgxgvhseiur9"></a><span lang=EN>Training</span></h5>
 
             <p class=MsoNormal><span lang=EN>Below are some of the recent training results
-            captured for the comparison GAN. In these we were training entities and armor.
+            captured for the comparison GAN. In these, we were training entities and armor.
             While the color is off after the training, along with partial mode collapse,
-            the results to produce new variants of the sprites within the dataset.</span></p>
+            the results display new variants of the sprites within the dataset.</span></p>
 
             <p class=MsoNormal align=center style='text-align:center'><i><span lang=EN
             style='font-size:18.0pt;line-height:115%'><img width=624 height=624
@@ -421,8 +421,8 @@
 
             <p class=MsoNormal><span lang=EN>We started with one layer of autoencoder which
             produced good results as shown below, Figure 14. However, the network could not
-            learn with a second layer of autoencoder with any reasonable accuracy. Thus,
-            for our architecture we pretrain one layer of autoencoder before swapping order
+            learn with a second layer of autoencoder with any reasonable accuracy. Thus
+            for our architecture, we pretrain one layer of autoencoder before swapping order
             of encoder and decoder.</span></p>
 
             <p class=MsoNormal align=center style='text-align:center'><span lang=EN
@@ -482,7 +482,7 @@
 
             <p class=MsoNormal style='text-align:justify'><span lang=EN>The simplest
             solution to implement in this case was to increase the batch size while
-            training the GAN. This solution worked to some extent, when training on large
+            training the GAN. This solution worked to some extent when training on large
             datasets. The resulting outputs had more variance and novelty.</span></p>
 
             <p class=MsoNormal style='text-align:justify'><span lang=EN>' </span></p>
@@ -495,7 +495,7 @@
             18: Autoencoder GAN results.</span></i></p>
 
 
-            <p class=MsoNormal style='text-align:justify'><span lang=EN>This however did
+            <p class=MsoNormal style='text-align:justify'><span lang=EN>This, however, did
             not prove to be a great solution as the autoencoder GAN did not perform well
             for limited datasets. Also, even on large datasets, once the GAN experience
             partial collapse the training process had to be restarted. Nevertheless, the
@@ -506,7 +506,7 @@
 
             <p class=MsoNormal><span lang=EN>A final attempt to handle the discriminator
             loss approaching zero was to use the comparison GAN's discriminator and our
-            model's generator and decoder. This produced the following sprites which was an
+            model's generator and decoder. This produced the following sprites which were an
             minor improvement over our previous autoencoder models.</span></p>
 
 
@@ -525,7 +525,7 @@
             <h3><a name="_dv85wmly1rwm"></a><span lang=EN>Discussion</span></h3>
 
             <p class=MsoNormal style='margin-bottom:16.0pt'><span lang=EN>In order to
-            further progress in the topic of sprite generation we implemented a generative
+            further progress in the topic of sprite generation, we implemented a generative
             adversarial network that was augmented with a pre-trained autoencoder. Thus,
             instead of learning to draw images, the GAN was responsible for learning the
             feature space of an autoencoder that was pre-trained to render sprites. This
@@ -534,7 +534,7 @@
             time to get initial results but at a major trade-off of stability during training.
             This was observed by the GAN's discriminator approaching zero early in the
             training. Several possible solutions we have found include minibatch
-            discrimination, using multiple models to train different for different modes,
+            discrimination, training multiple models for different modes,
             unrolled GANs, and collecting a larger dataset of sprites.</span></p>
 
             <p class=MsoNormal style='margin-bottom:16.0pt'><span lang=EN>A second
@@ -543,15 +543,15 @@
             dataset can produce the correct shape but would apply a new color palette to
             the result image. Likewise, both the comparison GAN and the autoencoder GAN
             would fail to learn color information while training on occasion. For the
-            autoencoder this resulted in sprites with inconsistent color palette and in the
-            comparison model the sprites would have color noise. These pixel errors
+            autoencoder, this resulted in sprites with an inconsistent color palette and in the
+            comparison model, the sprites would have color noise. These pixel errors
             jeopardize the visual metaphor that the sprite is supposed to serve if used in
             a game. We believe the first step to addressing this problem is to build a
             larger dataset with control for variance.</span></p>
 
             <p class=MsoNormal style='margin-bottom:16.0pt'><span lang=EN>The next step of
             the project is to explore alternate implementations, strategies, etc. to
-            further test the autoencoder concept. Near the end of the term we started work
+            further test the autoencoder concept. Near the end of the term, we started work
             on a conditional GAN with the hope that this handles the variance in the
             dataset. However, we repeatedly had the discriminator loss approach zero early
             in training (without the autoencoder). Thus, we abandoned that aspect of the
