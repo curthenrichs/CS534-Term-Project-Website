@@ -1,0 +1,19 @@
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center contact-section">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Team</h2>
+                <p>Our team is composed of students from CS 534 - Computational Photography fall 2018 course at the University of Wisonson Madison. </p>
+                <br><br>
+                <p>Curt Henrichs (Grad), Sayem Wani (Undergrad), Saheen Feroz (Undergrad)</p>
+
+                <ul class="list-inline banner-social-buttons">
+                    {% for network in site.social %}
+                    <li>
+                        <a href="{{ network.url }}" class="btn btn-default btn-lg"><i class="fa fa-{{ network.title }} fa-fw"></i> <span class="network-name">{{ network.title }}</span></a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>

@@ -1,0 +1,21 @@
+# Site settings
+title: CNN Sprite Generator
+url:  https://uwmadison-cs534-term-project-f2018-cdh.github.io/
+description: 'Generating new 2D game assests using DC-GAN.'
+# Color settings (hex-codes without the leading hash-tag)
+color:
+  primary-dark: '#ffffff'
+  links: '#b75c07' #'#e27209'
+  links-highlight: '#ff7b00'
+
+# Footer settings
+footer: CNN Sprite Generator - CS 534 Term Project
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  - title: github
+    url: https://github.com/UWMadison-CS534-Term-Project-F2018-CDH
+
+# Build settings
+markdown: kramdown
+permalink: pretty
