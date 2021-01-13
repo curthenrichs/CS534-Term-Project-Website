@@ -9,3 +9,9 @@ Use `jekyll build` to compile static site. Then copy contents from
 directory `_site` into the github.io pages repository.
 
 For our neural network source code, see our `GAN-Models` repository.
+
+
+
+<p>Our team is composed of students from CS 534 - Computational Photography fall 2018 course at the University of Wisonson Madison. </p>
+<br><br>
+<p>Curt Henrichs (Grad), Sayem Wani (Undergrad), Saheen Feroz (Undergrad)</p>
