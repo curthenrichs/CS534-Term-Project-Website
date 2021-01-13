@@ -12,6 +12,6 @@ For our neural network source code, see our [GAN-Models](https://github.com/curt
 This project was developed for CS 534 - Computational Photography fall 2018 course at the University of Wisconsin Madison.
 
 We are,
-- Curt Henrichs (Grad Student)
+- Curt Henrichs (Graduate Student)
 - Sayem Wani (Undergrad Student)
 - Saheen Feroz (Undergrad Student)
