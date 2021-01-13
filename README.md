@@ -1,17 +1,17 @@
 Sprite Generation Term Project
 =========================
 
-For active website navigate to https://uwmadison-cs534-term-project-f2018-cdh.github.io/
+For active website navigate to https://curthenrichs.github.io/CS534-Term-Project-Website
 
-For development of website see jekyll-build repository.
+Use `jekyll build` to compile static site.
 
-Use `jekyll build` to compile static site. Then copy contents from
-directory `_site` into the github.io pages repository.
-
-For our neural network source code, see our `GAN-Models` repository.
+For our neural network source code, see our [GAN-Models](https://github.com/curthenrichs/CS534-Term-Project-GAN-Models) repository.
 
 
+## Team
+This project was developed for CS 534 - Computational Photography fall 2018 course at the University of Wisconsin Madison.
 
-<p>Our team is composed of students from CS 534 - Computational Photography fall 2018 course at the University of Wisonson Madison. </p>
-<br><br>
-<p>Curt Henrichs (Grad), Sayem Wani (Undergrad), Saheen Feroz (Undergrad)</p>
+We are,
+- Curt Henrichs (Grad Student)
+- Sayem Wani (Undergrad Student)
+- Saheen Feroz (Undergrad Student)
